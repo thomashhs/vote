@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>hello world</h1>>
-</body>
-</html>
+{% if question_list %}
+    <br>
+    <u1>
+        {% for question in question_list %}
+        <li><a href="{% url 'detail' question_id=question.id %}">{{ question.q_text }}</a></li>
+        <br>
+        {% endfor %}
+    </u1>
+{% else %}
+    <p>No Questions available</p>>
+{% endif %}

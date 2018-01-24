@@ -19,5 +19,7 @@ from myapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/$', views.index),
+    url(r'^index/$', views.index,name="index"),
+    url(r'^detail/(?P<question_id>\d+)/$', views.detail,name="detail"),
+    url(r'^vote/(?P<question_id>\d+)/$', views.vote,name="vote"),
 ]

@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+<u1>
+    {% for choice in question.choice_set.all %}
+    <li>{{ choice.c_text }} -- {{ choice.c_votes }} vote{{ choice.c_votes|pluralize }}</li>
+    {% endfor %}
+</u1>
+<br><br>
+<a href="{% url 'detail' question_id=question.id %}">Vote Again?</a>
